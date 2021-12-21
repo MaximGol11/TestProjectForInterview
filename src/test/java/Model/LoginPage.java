@@ -15,6 +15,8 @@ public class LoginPage extends BaseModel {
     @FindBy (name = "commit")
     private WebElement submitButton;
 
+
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -32,8 +34,8 @@ public class LoginPage extends BaseModel {
     }
 
     public HomePage clickSubmitButton() {
-        submitButton.click();
 
+        submitButton.click();
         return new HomePage(getDriver());
     }
 
