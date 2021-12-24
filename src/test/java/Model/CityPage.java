@@ -39,6 +39,7 @@ public class CityPage extends BaseModel{
         return Integer.parseInt(celsiusTemp);
     }
 
+    //возможно было сделать это более изящно, но больше проблем доставила конвертация температур.
     public List<Integer> getCurrentWeekTemp () {
 
         List<String> stringListTempClear = new ArrayList<>();
@@ -67,6 +68,7 @@ public class CityPage extends BaseModel{
         return intList;
     }
 
+    //Конвертация температур может работать некорректно. В идеале сравнивать температуры в диапазоне +- 1 градус.
     public boolean compareTemp (int celsiumCurrentTemp, int fahrenheitCurrentTemp) {
         return (Math.ceil(celsiumCurrentTemp + 273.15) == Math.ceil((fahrenheitCurrentTemp + 459.67) * 5 / 9));
     }
