@@ -69,6 +69,7 @@ public class CityPage extends BaseModel{
     }
 
     //Конвертация температур может работать некорректно. В идеале сравнивать температуры в диапазоне +- 1 градус.
+    // я так и не смог полностью победить эти округления
     public boolean compareTemp (int celsiumCurrentTemp, int fahrenheitCurrentTemp) {
         return (Math.ceil(celsiumCurrentTemp + 273.15) == Math.ceil((fahrenheitCurrentTemp + 459.67) * 5 / 9));
     }
