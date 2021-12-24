@@ -21,7 +21,7 @@ public class MainPage extends BaseModel {
 
     public LoginPage login() {
         getWait().until(ExpectedConditions.invisibilityOf(loader));
-        jsClick(getDriver(), signInButton);
+        signInButton.click();
 
         return new LoginPage(getDriver());
     }

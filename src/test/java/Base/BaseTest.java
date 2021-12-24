@@ -1,26 +1,18 @@
 package Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.util.Strings;
+
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-
-    private final static String LOGIN = "maxim.golubtsov@yahoo.com";
-    private final static String PASSWORD = "exampLe1";
-
     private WebDriver driver;
     private WebDriverWait wait;
-
 
     public WebDriver getDriver() {
         return driver;
@@ -32,7 +24,6 @@ public class BaseTest {
         }
         return wait;
     }
-
 
     @BeforeTest
     public void setUp() {
@@ -47,7 +38,6 @@ public class BaseTest {
     protected void stopDriver() {
         driver.quit();
         wait = null;
-
     }
 
 }

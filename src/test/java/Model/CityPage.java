@@ -40,12 +40,13 @@ public class CityPage extends BaseModel{
     }
 
     public List<Integer> getCurrentWeekTemp () {
+
         List<String> stringListTempClear = new ArrayList<>();
         List<List<String>> stringList = new ArrayList<>();
         List<String> separatedStringList = new ArrayList<>();
         List<Integer> intList = new ArrayList<>();
 
-       List<String> stringListTempFull = weekTemp.stream().map(WebElement::getText).collect(Collectors.toList());
+        List<String> stringListTempFull = weekTemp.stream().map(WebElement::getText).collect(Collectors.toList());
 
         for (String s : stringListTempFull) {
             stringListTempClear.add(s.replaceAll("[^0-9, -]", ""));
@@ -78,8 +79,6 @@ public class CityPage extends BaseModel{
             celsiumInKelvin.add(Math.ceil(celsiumWeekCurrentTemp.get(i) + 273.15));
             fahrenheitInKelvin.add(Math.ceil((fahrenheitCurrentTemp.get(i) + 459.67) * 5.0 / 9.0));
         }
-        System.out.println(celsiumInKelvin);
-        System.out.println(fahrenheitInKelvin);
         return celsiumInKelvin.equals(fahrenheitInKelvin);
     }
 }

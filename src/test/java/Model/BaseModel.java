@@ -34,12 +34,6 @@ public class BaseModel {
         PageFactory.initElements(getDriver(), this);
     }
 
-    protected static void jsClick(WebDriver driver, WebElement element) {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
-    }
-
-    //need fix
     public String getAlertMessage() {
        return alertMessage.getText();
     }
