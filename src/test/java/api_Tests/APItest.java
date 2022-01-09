@@ -15,6 +15,7 @@ public class APItest {
     private static final String URL = "https://api.openweathermap.org";
     private static final String API_KEY = "677bcd2a86842a8704b0099b932bde19";
     private static final String CITY = "Yoshkar-Ola";
+    private static final String DATA = "1641709387";
 
     @Test
     public void testCheckCityName() {
@@ -31,7 +32,7 @@ public class APItest {
     public void testYohkarOlaTemp(){
         List <WeatherHourly> weathers = given()
                 .contentType(ContentType.JSON)
-                .when().get(URL + "/data/2.5/onecall/timemachine?lat=56.6388&lon=47.8908&dt=1641709387&appid=" + API_KEY)
+                .when().get(URL + "/data/2.5/onecall/timemachine?lat=56.6388&lon=47.8908&dt=" + DATA + "&appid=" + API_KEY)
                 .then().statusCode(200)
                 .extract().jsonPath().getList("hourly", WeatherHourly.class);
 
