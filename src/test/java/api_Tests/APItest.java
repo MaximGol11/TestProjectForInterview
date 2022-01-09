@@ -36,7 +36,6 @@ public class APItest {
                 .extract().jsonPath().getList("hourly", WeatherHourly.class);
 
         for (WeatherHourly weather : weathers) {
-            System.out.println(weather.getTemp());
             Assert.assertTrue(weather.getTemp() >= 250.0);
         }
     }
