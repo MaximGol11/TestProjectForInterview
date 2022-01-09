@@ -1,9 +1,9 @@
-package Tests;
+package tests;
 
-import Base.BaseTest;
-import Model.HomePage;
-import Model.LoginPage;
-import Model.MainPage;
+import base.BaseTest;
+import model.HomePage;
+import model.LoginPage;
+import model.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

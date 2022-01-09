@@ -1,9 +1,11 @@
-package API_Tests;
+package api_Tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pojo.WeatherHourly;
+
 import java.util.List;
 import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.RestAssured.given;
@@ -27,13 +29,14 @@ public class APItest {
 
     @Test
     public void testYohkarOlaTemp(){
-        List <Weather> weathers = given()
+        List <WeatherHourly> weathers = given()
                 .contentType(ContentType.JSON)
-                .when().get(URL + "/data/2.5/onecall/timemachine?lat=56.6388&lon=47.8908&dt=1640350800&appid=" + API_KEY)
+                .when().get(URL + "/data/2.5/onecall/timemachine?lat=56.6388&lon=47.8908&dt=1641709387&appid=" + API_KEY)
                 .then().statusCode(200)
-                .extract().jsonPath().getList("hourly", Weather.class);
+                .extract().jsonPath().getList("hourly", WeatherHourly.class);
 
-        for (Weather weather : weathers) {
+        for (WeatherHourly weather : weathers) {
+            System.out.println(weather.getTemp());
             Assert.assertTrue(weather.getTemp() >= 250.0);
         }
     }

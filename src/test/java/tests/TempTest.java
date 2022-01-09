@@ -1,8 +1,8 @@
-package Tests;
+package tests;
 
-import Base.BaseTest;
-import Model.CityPage;
-import Model.MainPage;
+import base.BaseTest;
+import model.CityPage;
+import model.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
